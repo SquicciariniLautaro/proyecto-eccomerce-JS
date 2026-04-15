@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "nombre": "Remera Negra",
+        "precio": "$5000",
+        "stock": 5,
+        "imagen": "./img/remera-negra.png"
+    },
+    {
+        "id": 2,
+        "nombre": "Remera Blanca",
+        "precio": "$6000",
+        "stock": 3,
+        "imagen": "./img/remera-blanca.png"
+    },
+    {
+        "id": 3,
+        "nombre": "Remera Roja",
+        "precio": "$5500",
+        "stock": 7,
+        "imagen": "./img/remera-roja.png"
+    }
+]

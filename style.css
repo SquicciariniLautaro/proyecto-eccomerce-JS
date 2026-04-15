@@ -1,0 +1,187 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f9f9f9; /*fondo gris*/
+    color: #333;
+}
+
+.encabezado {
+    text-align: center;
+    padding: 2rem;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 2rem;
+}
+
+/* --- COLUMNAS --- */
+.contenedor-principal {
+    display: flex; /* Esto pone a los elementos hijos uno al lado del otro */
+    gap: 2rem; /* Espacio entre las columnas */
+    max-width: 1200px; /* Límite de ancho para pantallas gigantes */
+    margin: 0 auto; /* Centra todo el contenedor en la pantalla */
+    padding: 0 20px;
+}
+
+.seccion-productos {
+    flex: 2; /* Le decimos que ocupe el doble de espacio que el carrito */
+}
+
+.seccion-carrito {
+    flex: 1; /* Ocupa una parte del espacio */
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px; /* Bordes redondeados */
+    border: 1px solid #ddd;
+    height: fit-content; /* Evita que la caja blanca se estire hasta el fondo */
+}
+
+/* --- GRILLA DE PRODUCTOS --- */
+.grilla-productos {
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 1.5rem; 
+}
+
+/* --- TARJETAS --- */
+.tarjeta-producto {
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 8px; /* Redondea las puntas */
+    border: 1px solid #eaeaea; /* Un borde gris hiper sutil */
+    text-align: center; /* Centra el texto y el botón adentro de la tarjeta */
+    box-shadow: 0 4px 6px rgba(0,0,0, 0.05); /* La sombra mágica */
+    transition: transform 0.2s; /* Prepara una animación suave */
+}
+
+/* efecto hover cuando paso el mouse por arriba */
+.tarjeta-producto:hover {
+    transform: translateY(-5px); /* Hace que la tarjeta "salte" un poquito hacia arriba */
+}
+
+.btn-agregar {
+    background-color: #28a745;
+    color: white;
+    border: none; /* Le sacamos el borde feo que traen los botones por defecto */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 15px; /* Lo separa un poco del precio */
+    cursor: pointer; /* Cambia la flecha del mouse por la "manito" de click */
+}
+
+.btn-agregar:hover {
+    background-color: #218838; /* Un verde más oscuro cuando le pasás el mouse */
+}
+
+/* --- Cartel de agregar --- */
+.toast-notificacion {
+    position: fixed; 
+    bottom: 20px; 
+    right: 20px; 
+    background-color: #28a745;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    box-shadow: 0 4px 12px rgba(0,0,0, 0.15);
+    z-index: 1000; /* Se asegura de estar por encima de TODO lo demás en la pantalla */
+}
+
+.img-producto {
+    width: 100%; /* Hace que la foto ocupe todo el ancho de la tarjeta */
+    height: 250px; /* Le da una altura fija para que todas las tarjetas midan igual */
+    object-fit: cover; /* Hace que la foto no se estire ni se deforme, sino que se recorte lindo */
+    border-radius: 5px; /* Le redondea las puntitas a la foto */
+    margin-bottom: 15px; /* La separa un poquito del título */
+}
+
+/* --- ESTILOS PARA LOS ÍTEMS DEL CARRITO --- */
+
+.item-carrito {
+    display: flex;
+    justify-content: space-between; /* Separa el texto de los botones */
+    align-items: center;
+    border-bottom: 1px solid #eaeaea; /* Una línea separadora muy sutil */
+    padding: 10px 0;
+}
+
+.item-carrito h4 {
+    margin: 0;
+    font-size: 1rem;
+    color: #333;
+}
+
+.item-carrito p {
+    margin: 5px 0 0 0;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* --- ESTILOS PARA LOS CONTROLES (+, -, ELIMINAR) --- */
+
+.controles-carrito {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espacio entre los botones */
+}
+
+/* Estilo general para los botoncitos redondos (+ y -) */
+.btn-sumar, .btn-restar {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    border-radius: 50%; /* Los hace perfectamente redondos */
+    width: 30px;
+    height: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-sumar:hover, .btn-restar:hover {
+    background-color: #e0e0e0;
+}
+
+.cantidad-display {
+    font-weight: bold;
+    min-width: 20px;
+    text-align: center;
+}
+
+/* Botón eliminar */
+.btn-eliminar {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.btn-eliminar:hover {
+    transform: scale(1.1); 
+}
+
+/* --- BOTÓN VACIAR CARRITO --- */
+#btn-vaciar {
+    background-color: transparent; 
+    color: #dc3545; 
+    border: 2px solid #dc3545; 
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+    margin-right: 10px; 
+}
+
+#btn-vaciar:hover {
+    background-color: #dc3545; 
+    color: white; 
+}
